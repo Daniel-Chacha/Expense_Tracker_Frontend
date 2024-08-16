@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="author" content="Daniel Chacha">
+        <meta name="description" content="This website helps individuals to track their expenses">
+        <title>FinanceFriend</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="images/beam.jpeg" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <h1> <span style="font-size: 1.3em;">F</span>INANCE<span style="font-size: 1.3em;">F</span>RIEND</h1>
+            
+        </header>
+    
+        <main> <br> 
+            <button id="logout-button" class="log" style="margin-left: 85%; position: fixed; height: 40px; cursor: pointer;">Log Out</button>
+            
+            <h2>Record New Expenses</h2>
+            <p></p>
+    
+            <form class="info" id="info3">
+                <div class="form_group">
+                    <label for="exp_name">Expense Name</label>
+                    <input type="text" name="exp_name" id="exp_name" placeholder="i.e rent ,coffee, tomatoes....." required> 
+                </div>
+     
+                <div class="form_group">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" id="amount" required> 
+                </div>
+    
+                <div class="form_group">
+                    <label for="exp_category">Expense Category</label>
+                    <select name="exp_category" id="exp_category" required>
+                        <option value="">Select a category</option>
+                        <option value="food">Food</option>
+                        <option value="bills">Bills</option>
+                        <option value="entertainment">Entertainment</option>
+                    </select> 
+                </div>
+                
+                <div class="form_group">
+                    <label for="pay_mode">Payment Mode</label>
+                    <input type="text" name="pay_mode" id="pay_mode" placeholder="i.e mpesa, cash ,credit card....." required>  
+                </div>
+    
+                <div class="form_group">
+                    <label for="time">Time & Date</label>
+                    <input type="datetime-local" name="time" id="time" required> 
+                </div>
+                
+                <div class="form_group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" placeholder="A brief description about the expense." required></textarea> 
+                </div>
+    
+    
+                <div class="">
+                    <input type="submit" name="sub" id="sub" value="ADD" required>
+                    <p id="auth-msg"></p>
+                </div>
+                
+            </form>  <br> <br>
+    
+    
+            <a href="view_expense.html" class="log">View Expenses</a> <br>  <br> <br>
+            <!-- <a href="edit_expense.html" class="log">Edit Expenses</a> -->
+        </main>
+    
+        <footer>
+            <p>Contact us via:</p>
+            <a href="https://www.instagram.com" target="_blank"> <img src="images/gram.jpeg" alt="instagram" class="social_icon"></a>
+            <a href="https://www.tiktok.com" target="_blank"> <img src="images/tiktok.png" alt="Tiktok" class="social_icon"></a>
+            <a href="https://www.linkedin.com" target="_blank"> <img src="images/link.png" alt="Linkedin" class="social_icon"></a>
+            <a href="https://www.x.com" target="_blank"> <img src="images/x.png" alt="X" class="social_icon"></a>
+            <a href="https://www.facebook.com" target="_blank"> <img src="images/face.png" alt="Facebook" class="social_icon"></a>
+            <p> &gt;&gt;&gt;&copy;Copyright 2024 FinanceFriend,  All rights reserved.&lt;&lt;&lt;  </p>
+        </footer>
+
+        <script src="add_expense.js"></script>
+    </body>
+
+
+</html>

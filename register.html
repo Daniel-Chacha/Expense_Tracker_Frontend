@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="author" content="Daniel Chacha">
+        <meta name="description" content="This website helps individuals to track their expenses">
+        <title>FinanceFriend</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="images/beam.jpeg" type="image/x-icon">
+    </head>
+    <body>
+                
+        <header>
+            <h1> <span style="font-size: 1.3em;">F</span>INANCE<span style="font-size: 1.3em;">F</span>RIEND</h1>
+        </header>
+
+        <main>
+
+            <p>Already have an account?</p>
+            <a href="login.html" class="log">Log In</a>  <br>  <br>
+            <form class="info" id="info1">
+                <div class="form_group">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" required>  
+                </div>
+
+                <div class="form_group">
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" required>
+                </div>
+
+
+                <div class="form_group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+
+                <div class="form_group">
+                    <label for="myemail">Email</label>
+                    <input type="email" name="myemail" id="myemail" required> 
+                </div>
+
+                <div class="form_group">
+                    <label for="tellno">Phone Number</label>
+                    <input type="tel" name="tellno" id="tellno" required>
+                </div>
+
+                <div class="form_group">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" required> 
+                </div>
+        
+                <div class="form_group">
+                    <label for="date">Date of Birth</label>
+                    <input type="date" name="date" id="date" required> 
+                </div>
+
+                <div class="form_group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required> 
+                </div>
+
+                <div class="form_group">
+                    <label for="confirm">Re-enter Password</label>
+                    <input type="password" name="confirm" id="confirm" required> 
+                </div>
+
+                <div>
+                    <input type="submit" name="sub" id="submit" value="SUBMIT">
+                    <p id="auth-msg"></p>
+                </div>
+            </form>
+            <p><a href="index.html" style="background-color: black;color: white;padding: 3px;margin-left: 30px; border-radius: 5px;font-weight: bolder;">Go back</a></p>
+            <footer>
+                <p>Contact us via:</p>
+                <a href="https://www.instagram.com" target="_blank"> <img src="images/gram.jpeg" alt="instagram" class="social_icon"></a>
+                <a href="https://www.tiktok.com" target="_blank"> <img src="images/tiktok.png" alt="Tiktok" class="social_icon"></a>
+                <a href="https://www.linkedin.com" target="_blank"> <img src="images/link.png" alt="Linkedin" class="social_icon"></a>
+                <a href="https://www.x.com" target="_blank"> <img src="images/x.png" alt="X" class="social_icon"></a>
+                <a href="https://www.facebook.com" target="_blank"> <img src="images/face.png" alt="Facebook" class="social_icon"></a>
+                <p> &gt;&gt;&gt;&copy; Copyright 2024 FinanceFriend,  All rights reserved.&lt;&lt;&lt;  </p>
+            </footer>
+        </main>
+
+        <script src="register.js"></script>
+    </body>
+</html>

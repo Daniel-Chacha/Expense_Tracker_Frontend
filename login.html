@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="author" content="Daniel Chacha">
+        <meta name="description" content="This website helps individuals to track their expenses">
+        <title>FinanceFriend</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="images/beam.jpeg" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <h1> <span style="font-size: 1.3em;">F</span>INANCE<span style="font-size: 1.3em;">F</span>RIEND</h1>
+        </header>
+
+        <main>
+            <div>
+                <p>Don't have  an existing account?</p>
+                <a href="register.html" class="log">Register</a>
+            </div>  <br> <br>
+    
+            <form class="info" id="info2">
+                <div class="form_group">
+                    <label for="myemail">Email</label>
+                    <input type="email" name="myemail" id="myemail">
+                </div>
+
+                <div class="form_group">
+                    <label for="pass">Password</label>  
+                    <input type="password" name="pass" id="pass">
+                </div>
+
+                <div>
+                    <a href="#forgot" class="log" style="padding: 4px;margin-right: 10px;">Forgot Password</a>
+                    <input type="submit" name="sub" id="sub" value="SUBMIT" onclick="addExpense()">
+                    <p id="auth-msg"></p>
+                </div>
+                
+            </form>  <br> <br>
+    
+            
+
+            <p><a href="index.html" style="background-color: black;color: white;padding: 3px;margin-left: 30px; border-radius: 5px;font-weight: bolder;">Go back</a></p>
+        </main>
+        <footer>
+            <p>Contact us via:</p>
+            <a href="https://www.instagram.com" target="_blank"> <img src="images/gram.jpeg" alt="instagram" class="social_icon"></a>
+            <a href="https://www.tiktok.com" target="_blank"> <img src="images/tiktok.png" alt="Tiktok" class="social_icon"></a>
+            <a href="https://www.linkedin.com" target="_blank"> <img src="images/link.png" alt="Linkedin" class="social_icon"></a>
+            <a href="https://www.x.com" target="_blank"> <img src="images/x.png" alt="X" class="social_icon"></a>
+            <a href="https://www.facebook.com" target="_blank"> <img src="images/face.png" alt="Facebook" class="social_icon"></a>
+            <p> &gt;&gt;&gt;&copy; Copyright 2024 FinanceFriend,  All rights reserved.&lt;&lt;&lt;  </p>
+        </footer>
+
+        <script src="login.js"></script>
+    </body>
+</html>
+
+
+app.delete('/delete_expense/:expense.EXPENSE_ID',(res,req) =>{
+    const expenseId=parseInt(req.params.expense.EXPENSE_ID,10);
+
+    const deleteData=`DELETE FROM expenses WHERE id=?`;
+    db.query(deleteData, [expenseId], (err,results) =>{
+        if (err) {
+            console.error('Database Error',err)
+            return res.json({error:'Database Error'});
+        }
+        if(results.affectedRows===0){
+            return res.status(404).json({error:'Expense Not Found'});
+        }
+        res.status(200).json({message:'Expense Deleted Successfully'});
+    })
+})
+
+
+fetch('http://localhost:2000/delete_expense/${expense.EXPENSE_ID}', {
+    method: 'DELETE',
+    // method: 'POST',
+    headers:{'Content-Type': 'application/json'}
+    // body: JSON.stringify({EXPENSE_ID})
+})
+.then(response =>{
+    if(response.ok){
+        alert('Expense deleted successfully!')
+    }else {
+        alert('Failed to delete the expense. Try Again!')
+    }
+})
+.catch(error =>{
+    console.error('Error', error);
+    alert('An error occurred while trying to delete the expense')
+});
